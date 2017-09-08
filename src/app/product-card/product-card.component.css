@@ -6,3 +6,12 @@
 .card {
   margin-bottom: 30px;
 }
+
+/*button {
+  background-color: grey;
+  border: 0;
+}*/
+
+.card-footer button {
+  cursor: pointer;
+}
