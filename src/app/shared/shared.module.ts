@@ -1,5 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
+
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { ProductQuantityComponent } from './components/product-quantity/product-quantity.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 
@@ -12,7 +19,12 @@ import { ProductService } from './services/product.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    CustomFormsModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    NgbModule.forRoot()
   ],
   declarations: [
     ProductCardComponent,
@@ -21,6 +33,12 @@ import { ProductService } from './services/product.service';
   exports: [
     ProductCardComponent,
     ProductQuantityComponent,
+    FormsModule,
+    CommonModule,
+    CustomFormsModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    NgbModule.forRoot().ngModule
   ],
   providers: [
     AuthService,

@@ -1,0 +1,36 @@
+
+button {
+  outline: none;
+}
+
+li {
+  list-style: none;
+
+}
+
+.fa-shopping-cart {
+  font-size: 20px;
+}
+
+.fa-leaf {
+  font-size: 30px;
+}
+
+.space {
+  width: 100px;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+
+}
+
+.navbar-brand {
+  color: #338a3e;
+  font-size: 24px;
+}
+
+nav.navbar {
+
+  border-bottom: 2px solid #a5d6a7;
+}
