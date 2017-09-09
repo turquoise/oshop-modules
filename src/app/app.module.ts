@@ -7,14 +7,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { AdminAuthGuard } from './admin-auth-guard.service';
-import { UserService } from './user.service';
-import { AuthGuard } from './auth-guard.service';
-import { AuthService } from './auth.service';
+
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
-import { CategoryService } from './category.service';
-import { ProductService } from './product.service';
 import { CustomFormsModule } from 'ng2-validation';
 
 import { AppComponent } from './app.component';
@@ -30,13 +25,15 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { LoginComponent } from './login/login.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
-import { ProductCardComponent } from './product-card/product-card.component';
-import { ShoppingCartService } from './shopping-cart.service';
-import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
-import { OrderService } from './order.service';
+
 import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { AdminOrderDetailsComponent } from './admin/admin-order-details/admin-order-details.component';
+
+import { AuthGuard } from './auth-guard.service';
+import { AdminAuthGuard } from './admin-auth-guard.service';
+
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -53,14 +50,13 @@ import { AdminOrderDetailsComponent } from './admin/admin-order-details/admin-or
     LoginComponent,
     ProductFormComponent,
     ProductFilterComponent,
-    ProductCardComponent,
-    ProductQuantityComponent,
     ShoppingCartSummaryComponent,
     ShippingFormComponent,
     AdminOrderDetailsComponent
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     FormsModule,
     CommonModule,
     CustomFormsModule,
@@ -100,14 +96,8 @@ import { AdminOrderDetailsComponent } from './admin/admin-order-details/admin-or
     ])
   ],
   providers: [
-    AuthService,
-    AuthGuard,
     AdminAuthGuard,
-    UserService,
-    CategoryService,
-    ProductService,
-    ShoppingCartService,
-    OrderService
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
